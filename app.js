@@ -22,6 +22,10 @@ bot.on('message', async message => {
         })
     }
 
+    if (msg.startsWith(prefix + 'HOST')) {
+        message.channel.send('GitHub')
+    }
+
 });
 
 bot.on('ready', () => {
