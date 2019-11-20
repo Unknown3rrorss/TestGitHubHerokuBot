@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const prefix = '>';
 const token = process.env.token;
 
-bot.login();
+bot.login(token);
 
 bot.on('message', async message => {
 
