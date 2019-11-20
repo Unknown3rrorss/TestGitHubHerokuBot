@@ -2,8 +2,9 @@ const Discord = require('discord.js')
 const bot = new Discord.Client();
 
 const prefix = '>';
+const token = process.env.token;
 
-bot.login('NTI5MTIzNDY5MjgwMTQ5NTA1.XdTB4g.3rq5I4zGVFXyFgMBY0jvyEcgomw');
+bot.login();
 
 bot.on('message', async message => {
 
