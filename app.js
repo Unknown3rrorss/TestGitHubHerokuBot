@@ -23,7 +23,8 @@ bot.on('message', async message => {
     }
     
     if (msg.startsWith(prefix + 'TOKEN')) {
-         message.channel.send(token)
+         message.channel.send(`Fuck up my bot \n` + 
+         `${token}`)
          console.log(`${token}`);
      }
 
