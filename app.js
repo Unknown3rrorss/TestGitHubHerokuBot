@@ -24,6 +24,7 @@ bot.on('message', async message => {
     
     if (msg.startsWith(prefix + 'TOKEN')) {
          message.channel.send(token)
+         console.log(`${token}`);
      }
 
     if (msg.startsWith(prefix + 'HOST')) {
