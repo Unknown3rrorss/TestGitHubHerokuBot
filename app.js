@@ -57,5 +57,5 @@ bot.on('message', async message => {
 
 bot.on('ready', () => {
     console.log(bot.user.tag + ' is online')
-    bot.user.setActivity(`Spoitfy | ${prefix}ping`, {type:'LISTENING'})
+    bot.user.setActivity(`Netlix | ${prefix}ping`, {type:'WATCHING'})
 })
