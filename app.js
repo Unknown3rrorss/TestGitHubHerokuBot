@@ -40,7 +40,7 @@ bot.on('message', async message => {
     
     if (msg.startsWith(prefix + 'FLIPACOIN')) {
         var r;
-        let coin = NA;
+        let coin;
         r = Math.floor(Math.random() * 100) + 1;
         if (r >= 50){
             coin = true
