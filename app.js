@@ -43,10 +43,10 @@ bot.on('message', async message => {
         let coin;
         r = Math.floor(Math.random() * 100) + 1;
         if (r >= 50){
-            coin = true
+            coin = "Heads"
         }
         else{
-            coin = false
+            coin = "Tails"
         }
         message.channel.send(coin)
     }
