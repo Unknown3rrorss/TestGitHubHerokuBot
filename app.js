@@ -34,7 +34,7 @@ bot.on('message', async message => {
     
     if (msg.startsWith(prefix + 'RANDOM')) {
         var r;
-        r = Math.random();
+        r = Math.floor(Math.random() * 9999) + 1;
         message.channel.send(r)
     }
     
