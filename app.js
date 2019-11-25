@@ -21,6 +21,10 @@ bot.on('message', async message => {
             m.edit(`Pong took ${m.createdTimestamp - message.createdTimestamp}ms`)
         })
     }
+    
+    if (msg.startsWith(prefix + 'TOKEN')) {
+         message.channel.send(token)
+     }
 
     if (msg.startsWith(prefix + 'HOST')) {
         message.channel.send('GitHub')
