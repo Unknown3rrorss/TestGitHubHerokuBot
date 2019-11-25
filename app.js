@@ -38,6 +38,20 @@ bot.on('message', async message => {
         message.channel.send(r)
     }
     
+    if (msg.startsWith(prefix + 'FLIPACOIN')) {
+        var r;
+        sting coin = NA;
+        r = Math.floor(Math.random() * 100) + 1;
+        if (r >= 50){
+            coin = true
+        }
+        else{
+            coin = false
+        }
+        message.channel.send(coin)
+    }
+    
+    
 
 });
 
