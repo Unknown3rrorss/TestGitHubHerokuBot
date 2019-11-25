@@ -51,7 +51,27 @@ bot.on('message', async message => {
         message.channel.send(coin)
     }
     
-    
+    if (message.member.permissions.has('ADMINISTRATOR')) {
+        async function purge() {
+            message.delete();
+
+            if (isNaN(args[0])) {
+                message.channel.send(`Please say a number after purge \n Usage: ${prefix}purge <amount>`);
+                return;
+            }
+
+            const fetched = await message.channel.fetchMessages({limit: args[0]});
+            console.log(fetched.size + ' messages found, deleting...');
+
+            message.channel.bulkDelete(fetched)
+            .catch(error => message.channel.send(`Error: ${error}`));
+
+        }
+        purge();
+    }
+    else {
+        message.channel.send(`Sorry ${message.member} but you do not have the correct permissions to use this command`);
+    }
 
 });
 
