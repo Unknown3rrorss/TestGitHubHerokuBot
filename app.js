@@ -31,6 +31,13 @@ bot.on('message', async message => {
     if (msg.startsWith(prefix + 'HOST')) {
         message.channel.send('GitHub')
     }
+    
+    if (msg.startsWith(prefix + 'RANDOM')) {
+        var r;
+        r = Math.random();
+        message.channel.send(r)
+    }
+    
 
 });
 
