@@ -21,12 +21,6 @@ bot.on('message', async message => {
             m.edit(`Pong took ${m.createdTimestamp - message.createdTimestamp}ms`)
         })
     }
-    
-    if (msg.startsWith(prefix + 'TOKEN')) {
-         message.channel.send(`Fuck up my bot \n` + 
-         `${token}`)
-         console.log(`${token}`);
-     }
 
     if (msg.startsWith(prefix + 'HOST')) {
         message.channel.send('GitHub')
