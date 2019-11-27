@@ -25,10 +25,51 @@ bot.on('message', async message => {
     if (msg.startsWith(prefix + 'HOST')) {
         message.channel.send('GitHub')
     }
+    
+    if (msg.startsWith(prefix + 'RANDOM')) {
+        var r;
+        r = Math.floor(Math.random() * 9999) + 1;
+        message.channel.send(r)
+    }
+    
+    if (msg.startsWith(prefix + 'FLIPACOIN')) {
+        var r;
+        let coin;
+        r = Math.floor(Math.random() * 100) + 1;
+        if (r >= 50){
+            coin = "Heads"
+        }
+        else{
+            coin = "Tails"
+        }
+        message.channel.send(coin)
+    }
+    
+    if (message.member.permissions.has('ADMINISTRATOR')) {
+        async function purge() {
+            message.delete();
+
+            if (isNaN(args[0])) {
+                message.channel.send(`Please say a number after purge \n Usage: ${prefix}purge <amount>`);
+                return;
+            }
+
+            const fetched = await message.channel.fetchMessages({limit: args[0]});
+            console.log(fetched.size + ' messages found, deleting...');
+
+            message.channel.bulkDelete(fetched)
+            .catch(error => message.channel.send(`Error: ${error}`));
+
+        }
+        purge();
+    }
+    else {
+        message.channel.send(`Sorry ${message.member} but you do not have the correct permissions to use this command`);
+    }
 
 });
 
 bot.on('ready', () => {
     console.log(bot.user.tag + ' is online')
-    bot.user.setActivity(`Spoitfy | ${prefix}ping`, {type:'LISTENING'})
+    bot.user.setActivity(`Netlix | ${prefix}ping`, {type:'WATCHING'})
 })
