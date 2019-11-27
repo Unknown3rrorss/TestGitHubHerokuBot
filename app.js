@@ -45,7 +45,7 @@ bot.on('message', async message => {
         message.channel.send(coin)
     }
     
-    if (message.member.permissions.has('ADMINISTRATOR')) {
+    if (message.member.permissions.has('MESSAGE_DELETE')) {
         async function purge() {
             message.delete();
 
