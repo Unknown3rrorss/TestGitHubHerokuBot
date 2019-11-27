@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "node-gyp": "^6.0.1",
+    "rebuild": "^0.1.2",
+    "ytdl-core": "^1.0.1"
   }
 }
